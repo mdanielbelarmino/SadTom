@@ -1,19 +1,24 @@
-import { OrbitControls } from "@react-three/drei"
 import { Canvas } from "@react-three/fiber"
+import { UI } from "./components/UI"
+import { Experience } from "./components/Experience"
 
 function App() {
 
   return (
     <>
+      <UI />
       <Canvas camera={{
-        position: [3, 3, 3]
-      }}>
-        <color attach="background" args={["#333333"]} />
-        <OrbitControls />
-        <mesh>
-          <boxGeometry args={[0.5, 0.5, 0.5]} />
-          <meshNormalMaterial/>
-        </mesh>
+        position: [5, 5, 7 ],
+        fov: 45,
+      }}
+      shadows
+      >
+        {/* <color attach="background" args={["#e8e0b0"]} /> */}
+        <fog attach="fog" args={["#f5f4ed", 60, 100]} />
+        <group position-y={-1}>
+            <Experience />
+        </group>
+
       </Canvas>
     </>
   )
