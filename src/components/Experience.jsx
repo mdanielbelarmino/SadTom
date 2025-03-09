@@ -11,7 +11,7 @@ export const Experience = () => {
                 maxAzimuthAngle={Math.PI / 4}
             />
             {/* <Environment preset="warehouse" intensity={0.0}/> */}
-            <Backdrop scale={[100, 20, 20]} floor={1.5} receiveShadow position-z={-4}>
+            <Backdrop scale={[100, 15, 20]} floor={1.0} receiveShadow position-z={-4}>
                 <meshStandardMaterial color="#d6b77c" />
             </Backdrop>
             <SoftShadows size={52} samples={16} />

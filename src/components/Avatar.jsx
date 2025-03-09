@@ -7,7 +7,7 @@ import { Asset } from "./Asset";
 export const Avatar = ({
     ...props
 }) => {
-    const group = useRef();
+    const grp = useRef();
     // const { nodes, materials } = useGLTF('models/Body.glb')
     const customization = useConfiguratorStore((state) => state.customization);
     const setDownload = useConfiguratorStore((state) => state.setDownload);
@@ -16,7 +16,7 @@ export const Avatar = ({
         function download() {
             const exporter = new GLTFExporter();
             exporter.parse(
-                group.current,
+                grp.current,
                 function (result) {
                     save(
                         new Blob([result], { type: "application/octet-stream" }),
@@ -43,7 +43,7 @@ export const Avatar = ({
     }, []);
 
     return (
-        <group ref={group} {...props} dispose={null}>
+        <group ref={grp} {...props} dispose={null}>
             <group name="Scene">
                 {Object.keys(customization).map(
                     (key) =>
